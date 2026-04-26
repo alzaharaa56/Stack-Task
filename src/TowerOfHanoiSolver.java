@@ -9,6 +9,13 @@ public class TowerOfHanoiSolver {
     private static Stack<Integer> pegC = new Stack<>();
 
     private static int moveCount = 0;
+    public static void main(String[] args) {
+
+        solveAndDisplay(3);
+        solveAndDisplay(4);
+        solveAndDisplay(5);
+    }
+
 
 
 
