@@ -1,46 +1,85 @@
 
-import java.util.Stack;
+import java.util.*;
+
 
 public class InfixToPostfixConverter {
 
-    private static int getPrecedence(char operator) {
-        switch (operator) {
-            case '^': return 3;
-            case '*': case '/': case '%': return 2;
-            case '+': case '-': return 1;
-            default: return -1;
-        }
-    }
+    public static String infixToPostfix(String infix)
+    {
 
 
-    private static boolean isOperator(char ch) {
-        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^';
-    }
-
-    private static double applyOperation(double a, double b, char operator) {
-        switch (operator) {
-            case '+': return a + b;
-            case '-': return a - b;
-            case '*': return a * b;
-            case '/':
-                if (b == 0) throw new ArithmeticException("Division by zero");
-                return a / b;
-            case '%': return a % b;
-            case '^': return Math.pow(a, b);
-            default: throw new IllegalArgumentException("Invalid operator: " + operator);
-        }
-    }
-
-
-    public static String infixToPostfix(String infix) {
-        Stack<Character> stack = new Stack<>();
         StringBuilder postfix = new StringBuilder();
 
-        System.out.println("Converting: " + infix);
 
-        for (int i = 0; i < infix.length(); i++) {
-            char ch = infix.charAt(i);
-
+        Stack<Character> stk = new Stack<>();
+        for (char c : infix.toCharArray()) {
 
 
+            if (Character.isLetterOrDigit(c)) {
+                postfix.append(c);
+
+
+            }
+            else if (c == '(') {
+                stk.push(c);
+
+
+            }
+            else if (c == ')') {
+                while (!stk.isEmpty()
+                        && stk.peek() != '(') {
+                    postfix.append(stk.pop());
+                }
+                stk.pop();
+
+            }
+            else {
+
+
+                while (!stk.isEmpty()
+                        && precedence(stk.peek())
+                        >= precedence(c)) {
+                    postfix.append(stk.pop());
+                }
+                stk.push(c);
+
+            }
+        }
+
+
+        while (!stk.isEmpty()) {
+            postfix.append(stk.pop());
+        }
+
+        return postfix.toString();
+    }
+
+
+    public static int precedence(char operator)
+    {
+        switch (operator) {
+            case '+':
+            case '-':
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    // main function
+    public static void main(String[] args)
+    {
+        System.out.println("Enter a Infix expression:");
+        Scanner sc = new Scanner(System.in);
+        String infix = sc.next();
+
+        sc.close();
+        String postfix = infixToPostfix(infix);
+
+        System.out.println("Postfix Expression: \n"
+                + postfix);
+    }
 }
