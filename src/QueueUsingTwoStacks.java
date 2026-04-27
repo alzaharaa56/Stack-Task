@@ -15,6 +15,17 @@ public class QueueUsingTwoStacks {
         System.out.println("Enqueued: " + element);
         showState();
     }
+    public T dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty, cannot dequeue.");
+            return null;
+        }
+        transferIfNeeded();
+        T val = outputStack.pop();
+        System.out.println("Dequeued: " + val);
+        showState();
+        return val;
+    }
 
 
 
