@@ -42,7 +42,14 @@ public class BrowserNavigationSystem {
     }
 
 
+    public void showSessionPages() {
+        System.out.println("Session pages: " + sessionPages);
+    }
 
-}
+
+
+
+
+    }
 
 
