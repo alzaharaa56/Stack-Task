@@ -24,6 +24,15 @@ public class BrowserNavigationSystem {
         sessionPages.add(url);
         showStatus("Visited: " + url);
     }
+    public void goBack() {
+        if (backStack.isEmpty()) {
+            System.out.println("Cannot go back, no history.");
+            return;
+        }
+        forwardStack.push(currentPage);
+        currentPage = backStack.pop();
+        showStatus("Went back");
+    }
     public void goForward() {
         if (forwardStack.isEmpty()) {
             System.out.println("Cannot go forward, no forward history.");
@@ -56,7 +65,7 @@ public class BrowserNavigationSystem {
     public static void main(String[] args) {
         BrowserNavigationSystem browser = new BrowserNavigationSystem();
 
-        // Simulate at least 12 actions
+
         browser.visitPage("google.com");
         browser.visitPage("microsoft.com");
         browser.visitPage("github.com");
@@ -69,6 +78,7 @@ public class BrowserNavigationSystem {
         browser.visitPage("reddit.com");
         browser.goBack();
         browser.goForward();
+
 
 
         browser.showSessionPages();
