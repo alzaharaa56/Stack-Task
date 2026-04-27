@@ -28,6 +28,18 @@ public class StackSorter {
     }
 
 
+    public static void sortStackRecursive(Stack<Integer> stack) {
+        if (!stack.isEmpty()) {
+            int top = stack.pop();
+            sortStackRecursive(stack);
+            insertInSortedOrder(stack, top);
+        }
+    }
+
+
+
+
+
         }
     }
 
