@@ -9,5 +9,6 @@ public class NextGreaterElementFinder {
         int[] result = new int[n];
 
         Arrays.fill(result, -1);
+        Stack<Integer> stack = new Stack<>();
     }
 }
