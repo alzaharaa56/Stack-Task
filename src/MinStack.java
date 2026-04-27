@@ -130,7 +130,7 @@ public class MinStack {
         ms.pop1(); ms.pop2();
         ms.getMin1(); ms.getMin2();
         ms.pop1(); ms.pop2();
-        ms.pop1(); ms.pop2(); // edge case: popping until empty
-        ms.getMin1(); ms.getMin2(); // edge case: min from empty
+        ms.pop1(); ms.pop2();
+        ms.getMin1(); ms.getMin2();
     }
 }
