@@ -80,6 +80,14 @@ public class MinStack {
         display2();
     }
 
+    public void peek2() {
+        if (mainStack2.isEmpty()) {
+            System.out.println("Stack2 empty, cannot peek.");
+            return;
+        }
+        System.out.println("Peek2: " + mainStack2.peek());
+        display2();
+    }
 
 
 
