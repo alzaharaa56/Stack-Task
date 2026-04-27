@@ -15,6 +15,9 @@ public class MinStack {
 
     private Stack<Pair> mainStack1 = new Stack<>();
 
+    private Stack<Integer> mainStack2 = new Stack<>();
+    private Stack<Integer> minStack2 = new Stack<>();
+
 
 
 
