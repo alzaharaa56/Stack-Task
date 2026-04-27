@@ -32,5 +32,15 @@ public class InfixToPostfixConverter {
     }
 
 
+    public static String infixToPostfix(String infix) {
+        Stack<Character> stack = new Stack<>();
+        StringBuilder postfix = new StringBuilder();
+
+        System.out.println("Converting: " + infix);
+
+        for (int i = 0; i < infix.length(); i++) {
+            char ch = infix.charAt(i);
+
+
 
 }
