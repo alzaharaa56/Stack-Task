@@ -8,6 +8,8 @@ public class BrowserNavigationSystem {
 
     private LinkedList<String> sessionPages = new LinkedList<>();
 
+    private final int MAX_HISTORY = 10;
+
 }
 
 
