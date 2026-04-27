@@ -10,6 +10,10 @@ public class BrowserNavigationSystem {
 
     private final int MAX_HISTORY = 10;
 
+    public void visitPage(String url) {
+        if (currentPage != null) {
+            if (backStack.size() >= MAX_HISTORY) {
+
 }
 
 
