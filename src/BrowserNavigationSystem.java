@@ -46,6 +46,12 @@ public class BrowserNavigationSystem {
         System.out.println("Session pages: " + sessionPages);
     }
 
+    private void showStatus(String action) {
+        System.out.println("Action: " + action);
+        showCurrentPage();
+        showHistory();
+        System.out.println("---------------------------");
+    }
 
 
 
