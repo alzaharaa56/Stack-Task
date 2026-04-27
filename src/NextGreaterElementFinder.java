@@ -1,10 +1,7 @@
 import java.util.Stack;
-import java.util.Arrays;
+
 
 public class NextGreaterElementFinder {
-
-
-
 
 
         static int arr[] = { 11, 13, 21, 3 };
@@ -32,8 +29,10 @@ public class NextGreaterElementFinder {
                     " --> " + nge[i]);
     }
 
+    public static void main(String[] args) {
 
-
+        printNGE();
+    }
 }
 
 
