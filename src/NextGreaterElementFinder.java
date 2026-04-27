@@ -84,8 +84,37 @@ public class NextGreaterElementFinder {
         }
         return result;
     }
+    public static void main(String[] args) {
+
+        int[][] testArrays = {
+                {4, 5, 2, 25},
+                {13, 7, 6, 12},
+                {1, 2, 3, 4, 5},
+                {5, 4, 3, 2, 1},
+                {2, 2, 2},
+                {10}
+        };
+
+        for (int[] arr : testArrays) {
+            System.out.println("\nArray: " + Arrays.toString(arr));
 
 
+            int[] nge = findNextGreaterElement(arr);
+            displayResults(arr, nge, "Next Greater (Stack O(n))");
 
+
+            int[] brute = bruteForceNextGreater(arr);
+            displayResults(arr, brute, "Next Greater (Brute Force O(n^2))");
+
+
+            int[] nse = findNextSmallerElement(arr);
+            displayResults(arr, nse, "Next Smaller (Stack O(n))");
+
+
+            int[] circular = findNextGreaterElementCircular(arr);
+            displayResults(arr, circular, "Next Greater (Circular)");
+        }
     }
 }
+
+
