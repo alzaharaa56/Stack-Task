@@ -53,6 +53,8 @@ public class MinStack {
         System.out.println("Min1: " + mainStack1.peek().minSoFar);
     }
 
-
+    public void display1() {
+        System.out.println("MainStack1: " + mainStack1);
+    }
 
 }
