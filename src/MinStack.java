@@ -67,6 +67,21 @@ public class MinStack {
     }
 
 
+    public void pop2() {
+        if (mainStack2.isEmpty()) {
+            System.out.println("Stack2 empty, cannot pop.");
+            return;
+        }
+        int val = mainStack2.pop();
+        if (!minStack2.isEmpty() && val == minStack2.peek()) {
+            minStack2.pop();
+        }
+        System.out.println("Pop2: " + val);
+        display2();
+    }
+
+
+
 
 
 
