@@ -57,6 +57,15 @@ public class QueueUsingTwoStacks {
     private void showState() {
         System.out.println("InputStack: " + inputStack);
         System.out.println("OutputStack: " + outputStack);
+        LinkedList<T> logicalQueue = new LinkedList<>();
+        for (int i = outputStack.size() - 1; i >= 0; i--) {
+            logicalQueue.add(outputStack.get(i));
+        }
+        for (int i = 0; i < inputStack.size(); i++) {
+            logicalQueue.add(inputStack.get(i));
+        }
+        System.out.println("Logical Queue: " + logicalQueue);
+        System.out.println("---------------------------");
     }
 
 
