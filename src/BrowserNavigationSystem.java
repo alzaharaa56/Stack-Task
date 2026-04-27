@@ -13,6 +13,8 @@ public class BrowserNavigationSystem {
     public void visitPage(String url) {
         if (currentPage != null) {
             if (backStack.size() >= MAX_HISTORY) {
+                backStack.remove(0);
+            }
 
 }
 
