@@ -37,6 +37,17 @@ public class StackSorter {
     }
 
 
+    private static void insertInSortedOrder(Stack<Integer> stack, int value) {
+        if (stack.isEmpty() || stack.peek() <= value) {
+            stack.push(value);
+        } else {
+            int top = stack.pop();
+            insertInSortedOrder(stack, value);
+            stack.push(top);
+        }
+    }
+
+
 
 
 
