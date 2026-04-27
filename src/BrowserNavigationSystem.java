@@ -33,6 +33,12 @@ public class BrowserNavigationSystem {
         showStatus("Went forward");
     }
 
+    public void showCurrentPage() {
+        System.out.println("Current page: " + currentPage);
+    }
+
+
+
 
 }
 
