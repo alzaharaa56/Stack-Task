@@ -46,6 +46,14 @@ public class QueueUsingTwoStacks {
         return inputStack.size() + outputStack.size();
     }
 
+    private void transferIfNeeded() {
+        if (outputStack.isEmpty()) {
+            while (!inputStack.isEmpty()) {
+                outputStack.push(inputStack.pop());
+            }
+        }
+    }
+
 
 
 
