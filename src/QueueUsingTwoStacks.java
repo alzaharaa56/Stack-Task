@@ -42,6 +42,10 @@ public class QueueUsingTwoStacks {
         return inputStack.isEmpty() && outputStack.isEmpty();
     }
 
+    public int size() {
+        return inputStack.size() + outputStack.size();
+    }
+
 
 
 
