@@ -19,7 +19,12 @@ public class MinStack {
     private Stack<Integer> minStack2 = new Stack<>();
 
 
-
+    public void push1(int value) {
+        int min = mainStack1.isEmpty() ? value : Math.min(value, mainStack1.peek().minSoFar);
+        mainStack1.push(new Pair(value, min));
+        System.out.println("Push1: " + value);
+        display1();
+    }
 
 
 
