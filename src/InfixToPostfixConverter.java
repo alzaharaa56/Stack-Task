@@ -13,4 +13,12 @@ public class InfixToPostfixConverter {
     }
 
 
+    private static boolean isOperator(char ch) {
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^';
+    }
+
+
+
+
+
 }
