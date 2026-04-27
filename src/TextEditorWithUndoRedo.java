@@ -48,7 +48,7 @@ public class TextEditorWithUndoRedo {
         }
         undoStack.push(text.toString());
 
-        // Clear redo stack after new typing
+
         redoStack.clear();
 
         // Append new text
