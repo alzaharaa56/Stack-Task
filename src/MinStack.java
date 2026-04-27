@@ -45,6 +45,14 @@ public class MinStack {
         display1();
     }
 
+    public void getMin1() {
+        if (mainStack1.isEmpty()) {
+            System.out.println("Stack1 empty, no min.");
+            return;
+        }
+        System.out.println("Min1: " + mainStack1.peek().minSoFar);
+    }
+
 
 
 }
