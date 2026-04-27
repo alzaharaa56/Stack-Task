@@ -57,4 +57,22 @@ public class MinStack {
         System.out.println("MainStack1: " + mainStack1);
     }
 
+    public void push2(int value) {
+        mainStack2.push(value);
+        if (minStack2.isEmpty() || value <= minStack2.peek()) {
+            minStack2.push(value);
+        }
+        System.out.println("Push2: " + value);
+        display2();
+    }
+
+
+
+
+
+
+
+
+
+
 }
