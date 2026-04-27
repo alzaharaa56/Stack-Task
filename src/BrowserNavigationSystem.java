@@ -23,6 +23,15 @@ public class BrowserNavigationSystem {
         sessionPages.add(url);
         showStatus("Visited: " + url);
     }
+    public void goForward() {
+        if (forwardStack.isEmpty()) {
+            System.out.println("Cannot go forward, no forward history.");
+            return;
+        }
+        backStack.push(currentPage);
+        currentPage = forwardStack.pop();
+        showStatus("Went forward");
+    }
 
 
 }
