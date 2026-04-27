@@ -36,6 +36,15 @@ public class MinStack {
         display1();
     }
 
+    public void peek1() {
+        if (mainStack1.isEmpty()) {
+            System.out.println("Stack1 empty, cannot peek.");
+            return;
+        }
+        System.out.println("Peek1: " + mainStack1.peek().value);
+        display1();
+    }
+
 
 
 }
