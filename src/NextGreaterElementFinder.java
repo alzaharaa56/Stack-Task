@@ -8,6 +8,6 @@ public class NextGreaterElementFinder {
         int n = arr.length;
         int[] result = new int[n];
 
-
+        Arrays.fill(result, -1);
     }
 }
