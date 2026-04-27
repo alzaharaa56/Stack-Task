@@ -89,6 +89,10 @@ public class MinStack {
         display2();
     }
 
+    public void display2() {
+        System.out.println("MainStack2: " + mainStack2);
+        System.out.println("MinStack2: " + minStack2);
+    }
 
 
 
