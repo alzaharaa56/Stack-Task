@@ -54,6 +54,12 @@ public class QueueUsingTwoStacks {
         }
     }
 
+    private void showState() {
+        System.out.println("InputStack: " + inputStack);
+        System.out.println("OutputStack: " + outputStack);
+    }
+
+
 
 
 
