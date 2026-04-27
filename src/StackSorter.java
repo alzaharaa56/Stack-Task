@@ -11,6 +11,23 @@ public class StackSorter {
         while (!stack.isEmpty()) {
             int current = stack.pop();
             System.out.println("Popped: " + current);
+
+            while (!tempStack.isEmpty() && tempStack.peek() > current) {
+                int moved = tempStack.pop();
+                stack.push(moved);
+                System.out.println("Moved back: " + moved);
+            }
+            tempStack.push(current);
+            System.out.println("TempStack: " + tempStack + " | MainStack: " + stack);
+        }
+
+        while (!tempStack.isEmpty()) {
+            stack.push(tempStack.pop());
+        }
+        System.out.println("Sorted stack (Iterative): " + stack);
+    }
+
+
         }
     }
 
