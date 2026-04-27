@@ -38,6 +38,10 @@ public class QueueUsingTwoStacks {
         showState();
         return val;
     }
+    public boolean isEmpty() {
+        return inputStack.isEmpty() && outputStack.isEmpty();
+    }
+
 
 
 
