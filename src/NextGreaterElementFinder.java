@@ -44,6 +44,24 @@ public class NextGreaterElementFinder {
         return result;
     }
 
+    public static int[] findNextSmallerElement(int[] arr) {
+        int n = arr.length;
+        int[] result = new int[n];
+        Arrays.fill(result, -1);
+        Stack<Integer> stack = new Stack<>();
+
+        System.out.println("Finding Next Smaller Element:");
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && arr[i] < arr[stack.peek()]) {
+                int idx = stack.pop();
+                result[idx] = arr[i];
+                System.out.println("Element " + arr[idx] + " → Next Smaller: " + arr[i]);
+            }
+            stack.push(i);
+            System.out.println("Token: " + arr[i] + " | Stack indices: " + stack);
+        }
+        return result;
+    }
 
 
     }
