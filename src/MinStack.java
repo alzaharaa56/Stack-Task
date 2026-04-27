@@ -26,6 +26,15 @@ public class MinStack {
         display1();
     }
 
+    public void pop1() {
+        if (mainStack1.isEmpty()) {
+            System.out.println("Stack1 empty, cannot pop.");
+            return;
+        }
+        Pair p = mainStack1.pop();
+        System.out.println("Pop1: " + p.value);
+        display1();
+    }
 
 
 
