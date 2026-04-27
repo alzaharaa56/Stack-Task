@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class BrowserNavigationSystem {
@@ -6,7 +7,7 @@ public class BrowserNavigationSystem {
     private Stack<String> forwardStack = new Stack<>();
     private String currentPage = null;
 
-    private LinkedList<String> sessionPages = new LinkedList<>();
+    public LinkedList<String> sessionPages = new LinkedList<>();
 
     private final int MAX_HISTORY = 10;
 
@@ -52,7 +53,26 @@ public class BrowserNavigationSystem {
         showHistory();
         System.out.println("---------------------------");
     }
+    public static void main(String[] args) {
+        BrowserNavigationSystem browser = new BrowserNavigationSystem();
 
+        // Simulate at least 12 actions
+        browser.visitPage("google.com");
+        browser.visitPage("microsoft.com");
+        browser.visitPage("github.com");
+        browser.goBack();
+        browser.goBack();
+        browser.goForward();
+        browser.visitPage("stackoverflow.com");
+        browser.visitPage("oracle.com");
+        browser.goBack();
+        browser.visitPage("reddit.com");
+        browser.goBack();
+        browser.goForward();
+
+
+        browser.showSessionPages();
+    }
 
 
 
