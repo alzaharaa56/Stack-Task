@@ -15,6 +15,7 @@ public class QueueUsingTwoStacks {
         System.out.println("Enqueued: " + element);
         showState();
     }
+
     public T dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is empty, cannot dequeue.");
@@ -26,6 +27,18 @@ public class QueueUsingTwoStacks {
         showState();
         return val;
     }
+    public T peek() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty, cannot peek.");
+            return null;
+        }
+        transferIfNeeded();
+        T val = outputStack.peek();
+        System.out.println("Peeked: " + val);
+        showState();
+        return val;
+    }
+
 
 
 
