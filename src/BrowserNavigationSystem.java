@@ -15,6 +15,15 @@ public class BrowserNavigationSystem {
             if (backStack.size() >= MAX_HISTORY) {
                 backStack.remove(0);
             }
+            backStack.push(currentPage);
+        }
+
+        forwardStack.clear();
+        currentPage = url;
+        sessionPages.add(url);
+        showStatus("Visited: " + url);
+    }
+
 
 }
 
