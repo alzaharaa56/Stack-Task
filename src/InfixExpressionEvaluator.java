@@ -3,14 +3,21 @@ import java.util.Stack;
 
 public class InfixExpressionEvaluator {
 
-    private static int getPrecedence(char operator) {
-        switch (operator) {
-            case '^': return 3;
-            case '*': case '/': case '%': return 2;
-            case '+': case '-': return 1;
-            default: return -1;
-        }
-    }
+    public static void main(String[] args) {
+        String[] expressions = {
+                "3 + 5",
+                "10 + 2 * 6",
+                "100 * (2 + 12)",
+                "100 * (2 + 12) / 14",
+                "3 + 4 * 2 / (1 - 5) ^ 2 ^ 3",
+                "5 % 2",
+                "12.5 + 7.3",
+                "(10 + 20) * 30",
+                "50 / (5 * (2 + 3))",
+                "2 ^ 3 ^ 2",
+                "-5 + 3",
+                "10 / 0"
+        };
 
 
 
