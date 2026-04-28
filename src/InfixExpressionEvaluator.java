@@ -41,4 +41,16 @@ public class InfixExpressionEvaluator {
                 continue;
             }
 
+            if (isNumber(ch)) {
+                StringBuilder sb = new StringBuilder();
+                while (i < expression.length() && (isNumber(expression.charAt(i)))) {
+                    sb.append(expression.charAt(i));
+                    i++;
+                }
+                double num = Double.parseDouble(sb.toString());
+                operandStack.push(num);
+                printStacks(operandStack, operatorStack, "Pushed number " + num);
+                continue;
+            }
+
 }
