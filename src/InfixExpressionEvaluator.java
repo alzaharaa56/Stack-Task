@@ -53,4 +53,18 @@ public class InfixExpressionEvaluator {
                 continue;
             }
 
+            else if (ch == ')') {
+                while (!operatorStack.isEmpty() && operatorStack.peek() != '(') {
+                    double b = operandStack.pop();
+                    double a = operandStack.pop();
+                    char op = operatorStack.pop();
+                    operandStack.push(applyOperation(a, b, op));
+                    printStacks(operandStack, operatorStack, "Applied operator " + op);
+                }
+                if (!operatorStack.isEmpty() && operatorStack.peek() == '(') {
+                    operatorStack.pop();
+                    printStacks(operandStack, operatorStack, "Popped '('");
+                }
+            }
+
 }
