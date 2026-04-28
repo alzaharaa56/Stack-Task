@@ -36,6 +36,9 @@ public class InfixExpressionEvaluator {
         int i = 0;
         while (i < expression.length()) {
             char ch = expression.charAt(i);
-
+            if (ch == ' ') {
+                i++;
+                continue;
+            }
 
 }
