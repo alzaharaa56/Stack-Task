@@ -18,7 +18,24 @@ public class InfixExpressionEvaluator {
                 "-5 + 3",
                 "10 / 0"
         };
+        for (String expr : expressions) {
+            System.out.println("\nExpression: " + expr);
+            try {
+                double result = evaluate(expr);
+                System.out.println("Result = " + result);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
 
+    public static double evaluate(String expression) {
+        Stack<Double> operandStack = new Stack<>();
+        Stack<Character> operatorStack = new Stack<>();
+
+        int i = 0;
+        while (i < expression.length()) {
+            char ch = expression.charAt(i);
 
 
 }
